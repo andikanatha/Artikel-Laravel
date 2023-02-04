@@ -9,7 +9,7 @@
                         <form>
                             @csrf
                             <fieldset>
-                                    <legend>Edit Data</legend>
+                                    <legend>Detail Data</legend>
                                     <p>
                                       <label>Judul :</label>
                                       <input type="text" class="form-control" id="tittle" name="tittle" placeholder="Judul Artikel" value= "{{old('tittle', $article->tittle)}}" required readonly>

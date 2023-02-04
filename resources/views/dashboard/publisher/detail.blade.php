@@ -8,7 +8,7 @@
                                 <img src="assets/logo_transparent.png" alt="" />
                             </div>
                 <fieldset style="margin-top: 100px; ">
-                    <legend>Publisher</legend>
+                    <legend>Detail Publisher</legend>
                     <div class="from">
                     <div class="list-group-item">
                         <label for="name">Nama Perusahaan</label>

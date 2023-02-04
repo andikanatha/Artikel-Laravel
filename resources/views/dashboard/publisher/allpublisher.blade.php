@@ -1,27 +1,25 @@
 @extends('dashboard.layout.main')
 
 @section('content')
-<div class="container-table">
-        <div class="title-table">
-            <h2>Daftar Author</h2>
-        </div>
-    <table class="styled-table">
+    <h3 class="text-center mb-3">Daftar Publisher</h3>
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>No</th>
-                <th>Nama Perusahaan</th>
-                <th>Nama Author</th>
-                <th>Email</th>
-                <th>Alamat</th>
-                <th>Umur</th>
-                <th>Article</th>
-                <th>Action</th>
+                <th scope="col">No.</th>
+                <th scope="col">Nama Perusahaan</th>
+                <th scope="col">Nama Author</th>
+                <th scope="col">Email</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">Umur</th>
+                <th scope="col">Article</th>
+                <th scope="col">Action</th>
+                
             </tr>
         </thead>
         <tbody>
-        <?php foreach($publishers as $publisher): ?>
-                            <tr>
-                                <th scope="row"><?= $publisher['id']; ?></th>
+            @foreach ($publishers as $publisher)
+                <tr>
+                    <th scope="row"><?= $publisher['id']; ?></th>
                                 <td><?= $publisher['name']; ?></td>
                                 <td><?= $publisher['name_publisher']; ?></td>
                                 <td><?= $publisher['email']; ?></td>
@@ -34,14 +32,12 @@
                                     <?php endforeach; ?>
                                 </td>
                                 <td>
-                                    <button>
-                                        <a href="/dashboard/publisher/detail/{{$publisher->name_publisher}}">Detail</a>
-                                    </button>
-                                 </td>
-                            </tr>
-                            <?php endforeach; ?>
-        </tbody>
-    </table>        
-    </div>
-    
-@endsection   
+                                    <a type="button" class="btn btn-info" href="/dashboard/publisher/detailpublisher/{{$publisher->id}}">Detail</a>
+                                </td>
+                </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>        
+</div>
+
+@endsection

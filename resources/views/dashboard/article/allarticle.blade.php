@@ -1,7 +1,7 @@
 @extends('dashboard.layout.main')
 
 @section('content')
-    <h3 class="text-center mb-3">List Artikel</h3>
+    <h3 class="text-center mb-3">Daftar Artikel</h3>
     @if (session()->has('success'))
         <div class="alert alert-success col-lg-12" role="alert">
             {{ session()->get('success') }}

@@ -22,7 +22,7 @@
                     <div class="card">
                         <div class="card-content">
                             <h3><a href="/article/detailarticle/{{$article->tittle}}" style="text-decoration: none;color: black; font-weight: bold; font-size: 20px;">{{$article->tittle}}</a></h3>
-                            <p ><a href="/article/detailarticle/{{$article->publisher_id}}" style="font-weight: normal;">{{$article->description}}</a></p>
+                            <h5><a href="/article/detailarticle/{{$article->publisher_id}}" style="font-weight: normal; color:black; ">{{$article->description}}</a></h5>
                             <div class="edit-tidakTertarik">
                             <form action="/article/delete/{{$article->id}}" method="post">
                                         @method('delete')
