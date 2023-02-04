@@ -11,33 +11,31 @@
                 <th scope="col">Email</th>
                 <th scope="col">Alamat</th>
                 <th scope="col">Umur</th>
-                <th scope="col">Article</th>
                 <th scope="col">Action</th>
                 
             </tr>
         </thead>
         <tbody>
+            @php
+                $no = $publishers->firstItem();
+            @endphp
             @foreach ($publishers as $publisher)
                 <tr>
-                    <th scope="row"><?= $publisher['id']; ?></th>
-                                <td><?= $publisher['name']; ?></td>
-                                <td><?= $publisher['name_publisher']; ?></td>
-                                <td><?= $publisher['email']; ?></td>
-                                <td><?= $publisher['alamat']; ?></td>
-                                <td><?= $publisher['age']; ?></td>
-                                <td>
-                                    <?php foreach($publisher->article as $article): ?>
-                                        <!-- <li style="text-align: left;"><a href="/article/detailarticle/{{$article->tittle}}"><?= $article->tittle; ?></a></li> -->
-                                        <li style="text-align: left;"><?= $article->tittle; ?></li>
-                                    <?php endforeach; ?>
-                                </td>
-                                <td>
-                                    <a type="button" class="btn btn-info" href="/dashboard/publisher/detailpublisher/{{$publisher->id}}">Detail</a>
-                                </td>
+                    <td>{{ $no++ }}</td>
+                    <td>{{ $publisher->name }}</td>
+                    <td>{{ $publisher->name_publisher }}</td>
+                    <td>{{ $publisher->email }}</td>
+                    <td>{{ $publisher->alamat }}</td>
+                    <td>{{ $publisher->age }}</td>
+                    <td>
+                    <a type="button" class="btn btn-info" href="/dashboard/publisher/detail/{{$publisher->name_publisher}}">Detail</a>
+                    </td>
                 </tr>
-            <?php endforeach; ?>
-    </tbody>
-</table>        
-</div>
-
+            @endforeach
+        </tbody>
+    </table>
+    <div class="pull-left">
+        {{ $publishers->links() }}
+    </div>
+    
 @endsection

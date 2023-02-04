@@ -18,11 +18,14 @@
             </tr>
         </thead>
         <tbody>
+            @php
+                $no = $articles->firstItem();
+            @endphp
             @foreach ($articles as $article)
                 <tr>
-                    <td>{{ $article['publisher_id'] }}</td>
-                    <td>{{ $article['author'] }}</td>
-                    <td>{{ $article['abstract'] }}</td>
+                    <td>{{ $no++}}</td>
+                    <td>{{ $article->author }}</td>
+                    <td>{{ $article->abstract }}</td>
                     <td>
                     <a type="button" class="btn btn-info" href="/dashboard/article/detailarticle/{{$article->tittle}}">Detail</a>
                     <a type="button" class="btn btn-warning" href="/dashboard/article/editarticle/{{$article->id}}">Edit</a>
@@ -35,8 +38,8 @@
                 </tr>
             @endforeach
         </tbody>
-
-
-
     </table>
+    <div class="pull-left">
+        {{ $articles->links() }}
+    </div>
 @endsection

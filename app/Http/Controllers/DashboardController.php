@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\article;
 use App\Models\publisher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.article.allarticle', [
-            'articles' => article::all(),
-        ]);
+            $articles = DB::table('articles')->paginate(5);
+            return view('dashboard.article.allarticle', compact('articles'));
     }
 
     public function detail(article $article)
@@ -72,9 +72,8 @@ class DashboardController extends Controller
     }
 
     public function index_publisher(){
-        return view('dashboard.publisher.allpublisher', [
-            'publishers' => Publisher::all()
-        ]);
+        $publishers = DB::table('publishers')->paginate(5);
+        return view('dashboard.publisher.allpublisher', compact('publishers'));
     }
 
     public function detail_publisher(publisher $publisher){
