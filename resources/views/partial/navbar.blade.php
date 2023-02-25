@@ -1,7 +1,7 @@
 <!-- Navbar -->
-<header>
+<header style="z-index: 1000;">
         {{-- <img src="/assets/rev-logo.png" alt="logo" class="logo"> --}}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
             {{-- <a class="navbar-brand" href="#">PERWEB</a> --}}
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">

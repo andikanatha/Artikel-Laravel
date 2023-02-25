@@ -10,8 +10,9 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        return view('article.allarticle', [
-            'articles' => article::all(),
+        return view('article.allarticle',[
+            'articles' => article::filter(request(['search', 'publisher']))->paginate(6),
+            'publishers' => publisher::all()
         ]);
     }
 

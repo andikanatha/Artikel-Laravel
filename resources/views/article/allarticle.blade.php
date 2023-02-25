@@ -17,6 +17,15 @@
                         <a href="/article/createarticle">Tambah Artikel</a>
                     </div> --}}
                 </div>
+                <form>
+                <div class="col-md-30">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search" name="search"
+                        value="{{ request()->input('search') }}">
+                        <button class="btn btn-info" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
                 <div class="column-artikel">
                 @foreach ($articles as $article)
                     <div class="card">
@@ -27,9 +36,9 @@
                             <form action="/article/delete/{{$article->id}}" method="post">
                                         @method('delete')
                                         @csrf
-                                        <div class="btn-tidakTertarik">
+                                        {{-- <div class="btn-tidakTertarik"> --}}
                                         {{-- <button onClick="return confirm('Apakah Kamu yakin? ')" >Hapus</button> --}}
-                                        </div>
+                                        {{-- </div> --}}
                                         </form>
                                <div class="edit">
                                 {{-- <a href="/article/editarticle/{{$article->id}}"><i title="Edit Artikel" class="uil uil-edit"></i></a> --}}
@@ -39,9 +48,13 @@
                     </div>
                  
                     @endforeach
+                    
+                </div>
+                <div>
+                    {{ $articles->links() }}
                 </div>
             </div>
         </div>
         <!-- end artikel -->
-    
+        
 @endsection   

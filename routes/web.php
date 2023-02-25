@@ -33,7 +33,7 @@ Route::get('/about', function () {
 
 Route::group(["prefix"  => "/article" ], function(){
     Route::get('/allarticle', [ArticleController::class, 'index']);
-    Route::get('/detailarticle/{article:tittle}', [ArticleController::class, 'detail']);
+    Route::get('/detailarticle/{article:id}', [ArticleController::class, 'detail']);
     Route::get('/editarticle/{article}', [ArticleController::class, 'edit']);
     Route::post('/update/{article}', [ArticleController::class, 'update']);
     Route::get('/createarticle', [ArticleController::class, 'create']);

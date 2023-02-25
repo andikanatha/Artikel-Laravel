@@ -376,6 +376,7 @@ input {
     background-color: #009879;
     color: #ffffff;
     text-align: center;
+    width: 100%;
 }
 
 .styled-table th,
@@ -405,7 +406,7 @@ input {
     color: #fff;
     font-weight: 600;
     background-color: #009879;
-    padding: 8px 14px;
+    /* padding: 8px 14px; */
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
 }

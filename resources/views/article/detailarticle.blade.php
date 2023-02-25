@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-                    <div  class="col-lg-8">
+                    <div  class="col d-flex" style="align-items: center; justify-content: center;">
                     <div class="container-edit">
                         <div class="form-edit">
                             <div class="logo-edit">

@@ -5,6 +5,7 @@
         <div class="title-table">
             <h2>Daftar Author</h2>
         </div>
+    <div class="row">
     <table class="styled-table">
         <thead>
             <tr>
@@ -33,13 +34,14 @@
                                         <li style="text-align: left;"><?= $article->tittle; ?></li>
                                     <?php endforeach; ?>
                                 </td>
-                                <td>
-                                    {{-- <a href="/publisher/detail/{{$publisher->name_publisher}}">Detail</a> --}}
-                                 </td>
+                                {{-- <td>
+                                    <a href="/publisher/detail/{{$publisher->name_publisher}}">Detail</a>
+                                 </td> --}}
                             </tr>
                             <?php endforeach; ?>
         </tbody>
-    </table>        
+    </table>    
+    </div>    
     </div>
     
 @endsection   
