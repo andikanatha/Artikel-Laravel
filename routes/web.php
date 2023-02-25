@@ -60,7 +60,7 @@ Route::group(["prefix"  => "/dashboard" ], function(){
     })->middleware('auth');
 
     Route::group(["prefix"  => "/article" ], function(){
-        Route::get('/allarticle', [DashboardController::class, 'index']);
+        Route::get('/allarticle', [DashboardController::class, 'index'])->name ('allarticle');
         Route::get('/detailarticle/{article:tittle}', [DashboardController::class, 'detail']);
         Route::get('/editarticle/{article:id}', [DashboardController::class, 'edit']);
         Route::post('/update/{article:id}', [DashboardController::class, 'update']);

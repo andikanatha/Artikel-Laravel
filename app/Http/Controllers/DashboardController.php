@@ -9,11 +9,14 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-            $articles = DB::table('articles')->paginate(5);
-            return view('dashboard.article.allarticle', compact('articles'));
+        return view('dashboard.article.allarticle',[
+            'articles' => article::filter(request(['search', 'publisher']))->paginate(10),
+            'publishers' => publisher::all()
+        ]);
     }
+    
 
     public function detail(article $article)
     {
@@ -72,7 +75,7 @@ class DashboardController extends Controller
     }
 
     public function index_publisher(){
-        $publishers = DB::table('publishers')->paginate(5);
+        $publishers = DB::table('publishers')->paginate(10);
         return view('dashboard.publisher.allpublisher', compact('publishers'));
     }
 

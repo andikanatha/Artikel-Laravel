@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Scheema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('publisher_id');
+            $table->foreignId(' ');
             $table->string('tittle');
             $table->string('abstract');
             $table->string('description');
